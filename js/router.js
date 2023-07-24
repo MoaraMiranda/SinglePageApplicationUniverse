@@ -1,8 +1,8 @@
 export class Router {
-  routes = {}
+  routes = {};
 
   add(routeName, page) {
-    this.routes[routeName] = page
+    this.routes[routeName] = page;
   }
 
   route(event) {
@@ -12,6 +12,15 @@ export class Router {
     window.history.pushState({}, "", event.target.href);
 
     this.handle();
+    this.selectMenu();
+  }
+
+  selectMenu() {
+    const { pathname } = window.location;
+    document
+      .querySelectorAll("nav a")
+      .forEach((item) => item.classList.remove("active"));
+    document.querySelector(`[href="${pathname}"]`).classList.add("active");
   }
 
   handle() {

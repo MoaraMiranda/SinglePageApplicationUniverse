@@ -17,36 +17,13 @@ const exploreLink = document.querySelector("#explore");
 const backgrounds = document.querySelector("#background-changes");
 
 homeLink.addEventListener("click", function (event) {
-  event.preventDefault();
-
-  homeLink.classList.add("active");
-  universeLink.classList.remove("active");
-  exploreLink.classList.remove("active");
-
-  backgrounds.classList.add(".home-background");
-  backgrounds.classList.remove(".universe-background");
-  backgrounds.classList.remove(".explore-background");
+  backgrounds.style.background = "url('/assets/mountains-universe-1.png')";
 });
 
 universeLink.addEventListener("click", function (event) {
-  event.preventDefault();
-  homeLink.classList.remove("active");
-  universeLink.classList.add("active");
-  exploreLink.classList.remove("active");
-
-  backgrounds.classList.remove(".home-background");
-  backgrounds.classList.add(".universe-background");
-  backgrounds.classList.remove(".explore-background");
+  backgrounds.style.background = "url('/assets/mountains-universe-2.png')";
 });
 
 exploreLink.addEventListener("click", function (event) {
-  event.preventDefault();
-  homeLink.classList.remove("active");
-  universeLink.classList.remove("active");
-  exploreLink.classList.add("active");
-  
-  backgrounds.classList.remove(".home-background");
-  backgrounds.classList.remove(".universe-background");
-  backgrounds.classList.add(".explore-background");
+  backgrounds.style.background = "url('/assets/mountains-universe-3.png')";
 });
-console.log(backgrounds);
